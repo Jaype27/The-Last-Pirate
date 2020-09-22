@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
 
 	public float _enemyHealth;
-	public Transform _firePoint;
+	public Transform[] _firePoint;
 	public GameObject _cannonBallPrefab;
 	public float _fireRate;
 	private float _fireRateTimer;
@@ -27,7 +27,16 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		CannonDetect();
+		if(_fireRateTimer <= 0) {
+			for(int i = 0; i < _firePoint.Length; i++) {
+				Instantiate(_cannonBallPrefab, _firePoint[i].position, _firePoint[i].rotation);
+			}
+			_fireRateTimer = _fireRate;
+		} else {
+			_fireRateTimer -= Time.deltaTime;
+		}
+
+		// CannonDetect();
 		// ShipMovement();
 
 		// Ray _rayDetect = new Ray (transform.position, transform.up);
@@ -45,15 +54,21 @@ public class EnemyController : MonoBehaviour {
 	void CannonDetect() {
 		RaycastHit2D _hitInfo2d = Physics2D.Raycast(transform.position, -transform.right, _rayDistance);
 		if(_hitInfo2d.collider != null) {
-			if(_fireRateTimer <= 0) {
-				Instantiate(_cannonBallPrefab, _firePoint.position, _firePoint.rotation);
-				_fireRateTimer = _fireRate;
-			} else {
-				_fireRateTimer -= Time.deltaTime;
-			}
+			Shoot();
 			Debug.DrawLine(transform.position, _hitInfo2d.point, Color.red);
 		} else {
 			Debug.DrawLine(transform.position, transform.position - transform.right * _rayDistance, Color.green);
+		}
+	}
+
+	void Shoot() {
+		if(_fireRateTimer <= 0) {
+			for(int i = 0; i < _firePoint.Length; i++) {
+				Instantiate(_cannonBallPrefab, _firePoint[i].position, _firePoint[i].rotation);
+			}
+			_fireRateTimer = _fireRate;
+		} else {
+			_fireRateTimer -= Time.deltaTime;
 		}
 	}
 

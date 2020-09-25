@@ -56,10 +56,12 @@ GameObject:
   - component: {fileID: 23451132939672132}
   - component: {fileID: 61392511095468672}
   - component: {fileID: 50866058655150272}
-  - component: {fileID: 114923897890394764}
+  - component: {fileID: 114056497246285036}
+  - component: {fileID: 114011176941017862}
+  - component: {fileID: 114409117961313342}
   m_Layer: 0
   m_Name: Basic_Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423562265408586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.0184474, y: 0.06722522, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4380449894085438}
@@ -337,7 +339,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114923897890394764
+--- !u!114 &114011176941017862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1423562265408586}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13c36aa5d7971745b6820097a01d6f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _forwardSpeed: 5
+  _reverseSpeed: 2
+  _rangeDistance: 3
+  _minRangeDistance: 2
+  _tooCloseToAlly: 1.5
+--- !u!114 &114056497246285036
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,22 +363,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1423562265408586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d13a81e88429d4640beaa8480562e2d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 7768de0d663baa34bb82ead05fc1211c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyHealth: 0
+  _maxEnemyHealth: 50
+--- !u!114 &114409117961313342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1423562265408586}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb1e44e4bfe13441bb840650329d005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _firePoint:
   - {fileID: 4534998131182266}
   - {fileID: 4127231959712630}
   _cannonBallPrefab: {fileID: 1724454449060822, guid: e6d74b4362826b348a8c6a721d3ccb28,
     type: 2}
-  _fireRate: 1
-  _rayDistance: 5
+  _fireRate: 2
+  _rayDistance: 20
   _mask:
     serializedVersion: 2
     m_Bits: 256
-  _forwardSpeed: 0
-  _rotationSpeed: 0
 --- !u!136 &136160734386732122
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -8,6 +8,7 @@ public class CannonBall : MonoBehaviour {
 	private Rigidbody2D rb2d;
 	public float _activeSpanLife;
 	private float _activeTimer;
+	public float _damageGiven;
 
 	void Awake() {
 		rb2d = GetComponent<Rigidbody2D>();
@@ -30,11 +31,16 @@ public class CannonBall : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if(other.gameObject.tag == "Player") {
+			this.gameObject.SetActive(false);
 			// Damage Player
 			
 		}
 
+		EnemyHealth _enemyHealth = other.GetComponent<EnemyHealth>();
+
 		if(other.gameObject.tag == "Enemy") {
+			_enemyHealth.DamageTaken(_damageGiven);
+			this.gameObject.SetActive(false);
 			// Damage Enemy
 			
 		}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMortar : MonoBehaviour {
-
+	[Header("Mortar Stats")]
 	public float _mortarDistance;
 	public GameObject _mortarPrefab;
 	public float _mortarFireRate;

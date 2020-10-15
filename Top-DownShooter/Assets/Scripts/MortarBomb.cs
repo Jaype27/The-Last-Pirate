@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class MortarBomb : MonoBehaviour {
 
+	public LayerMask _playerMask;
 	public float _mortarSpeed;
 	private Transform _playerPosition;
 	private Vector2 _playerTarget;
+	public float _damageGiven;
+	public float _splashRange;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +23,22 @@ public class MortarBomb : MonoBehaviour {
 
 		if(transform.position.x == _playerTarget.x && transform.position.y == _playerTarget.y) {
 			Destroy(gameObject);
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D other) {
+		Collider2D[] _colliders = Physics2D.OverlapCircleAll(transform.position, _splashRange, _playerMask);
+
+		for(int i = 0; i < _colliders.Length; i++) {
+			Rigidbody2D _targetRB = _colliders[i].GetComponent<Rigidbody2D>();
+			if(!_targetRB) 
+				continue;
+
+			EnemyHealth	_enemtHealth = _targetRB.GetComponent<EnemyHealth>();
+
+			if(!_enemtHealth)
+				continue;
+			
 		}
 	}
 }

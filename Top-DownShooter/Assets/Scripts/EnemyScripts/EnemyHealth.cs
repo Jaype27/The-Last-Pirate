@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour {
-
+	[Header("Health")]
 	private float _enemyHealth;
 	public float _maxEnemyHealth;
 
@@ -23,5 +23,6 @@ public class EnemyHealth : MonoBehaviour {
 
 	void Die() {
 		this.gameObject.SetActive(false);
+		WaveManager._enemyRemain--;
 	}
 }

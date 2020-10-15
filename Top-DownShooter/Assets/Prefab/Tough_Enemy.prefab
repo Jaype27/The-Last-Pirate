@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 114912987851898410}
   m_Layer: 0
   m_Name: Tough_Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -555,11 +555,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13c36aa5d7971745b6820097a01d6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _forwardSpeed: 0
-  _reverseSpeed: 0
-  _rangeDistance: 0
-  _minRangeDistance: 0
-  _tooCloseToAlly: 0
+  _forwardSpeed: 2
+  _reverseSpeed: 2
+  _rangeDistance: 3
+  _minRangeDistance: 2
+  _tooCloseToAlly: 1.5
 --- !u!114 &114912987851898410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -571,13 +571,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb1e44e4bfe13441bb840650329d005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firePoint: []
-  _cannonBallPrefab: {fileID: 0}
-  _fireRate: 0
-  _rayDistance: 0
+  _firePoint:
+  - {fileID: 4835074970637688}
+  - {fileID: 4386483762050566}
+  - {fileID: 4093074267666234}
+  - {fileID: 4166171480242820}
+  _cannonBallPrefab: {fileID: 1724454449060822, guid: e6d74b4362826b348a8c6a721d3ccb28,
+    type: 2}
+  _fireRate: 2
+  _rayDistance: 20
   _mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!136 &136367220993829870
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
-
+	[Header("Speed")]
 	public float _forwardSpeed;
 	public float _reverseSpeed;
 	public float _rangeDistance;

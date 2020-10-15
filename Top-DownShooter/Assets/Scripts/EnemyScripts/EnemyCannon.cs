@@ -6,6 +6,7 @@ public class EnemyCannon : MonoBehaviour {
 
 	public Transform[] _firePoint;
 	public GameObject _cannonBallPrefab;
+	[Header("Firerate")]
 	public float _fireRate;
 	private float _fireRateTimer;
 	public float _rayDistance;
@@ -36,7 +37,7 @@ public class EnemyCannon : MonoBehaviour {
 			CannonShoot();
 			Debug.DrawLine(transform.position, _hitInfo2d2.point, Color.red);
 		} else {
-			Debug.DrawLine(transform.position, transform.position - transform.right * _rayDistance, Color.green);
+			Debug.DrawLine(transform.position, transform.position + transform.right * _rayDistance, Color.red);
 		}
 	}
 

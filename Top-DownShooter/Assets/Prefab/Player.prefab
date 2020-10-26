@@ -171,13 +171,14 @@ GameObject:
   - component: {fileID: 23779597939407254}
   - component: {fileID: 61209462887787318}
   - component: {fileID: 50336060777364316}
+  - component: {fileID: 114830963085077304}
   - component: {fileID: 114894832054907124}
   - component: {fileID: 114477038591269976}
   - component: {fileID: 114173406908420004}
   - component: {fileID: 114356482708005254}
   - component: {fileID: 114613329829778342}
   m_Layer: 0
-  m_Name: Ship
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,7 +362,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1768122111370878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.98, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4525766543190944}
@@ -784,6 +785,21 @@ MonoBehaviour:
   _bombPrefab: {fileID: 1933776267557952, guid: 0df867194d47f724d8d35d8432044112,
     type: 2}
   _fireRate: 1
+--- !u!114 &114830963085077304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768122111370878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17036597426b1845b9a12c499c34e06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxPlayerHealth: 100
+  _playerRend: {fileID: 23779597939407254}
+  _flashMax: 0.1
+  _invincibleMax: 1
 --- !u!114 &114894832054907124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -795,8 +811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac543780115d859479684f380ec6ddda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _forwardSpeed: 3
-  _reverseSpeed: 1
+  _forwardSpeed: 5
+  _reverseSpeed: 3
   _rotationSpeed: 2
 --- !u!136 &136508992050756622
 CapsuleCollider:

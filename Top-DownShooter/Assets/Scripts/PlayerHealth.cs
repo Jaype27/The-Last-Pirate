@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
 
-	public float _maxPlayerHealth = 100f;
-	public float _playerHealth;
-
+	public float _maxPlayerHealth;
+	private float _playerHealth;
+	public Image _healthBar;
 	public Renderer _playerRend;
 	private float _flashCounter;
 	public float _flashMax = 0.1f;
@@ -21,6 +22,7 @@ public class PlayerHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		InvincibleFrames();
+		HealthBar();
 	}
 
 	void InvincibleFrames() {
@@ -41,7 +43,11 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
-	public void PlayerDamage(float _dmg) {
+	void HealthBar() {
+		_healthBar.fillAmount = _playerHealth / _maxPlayerHealth;
+	}
+
+	public void DamageTaken(float _dmg) {
 
 		if(_invincibleCounter <= 0) {
 			_playerHealth -= _dmg;

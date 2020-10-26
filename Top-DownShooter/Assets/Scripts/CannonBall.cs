@@ -30,12 +30,7 @@ public class CannonBall : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if(other.gameObject.tag == "Player") {
-			this.gameObject.SetActive(false);
-			// Damage Player
-			
-		}
-
+		
 		EnemyHealth _enemyHealth = other.GetComponent<EnemyHealth>();
 
 		if(other.gameObject.tag == "Enemy") {

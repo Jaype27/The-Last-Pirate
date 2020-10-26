@@ -145,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423562265408586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.59986, y: -3.2303839, z: 0}
+  m_LocalPosition: {x: 0, y: -3.2303839, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4380449894085438}
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423562265408586}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f13c36aa5d7971745b6820097a01d6f1, type: 3}
   m_Name: 
@@ -381,10 +381,10 @@ MonoBehaviour:
   _firePoint:
   - {fileID: 4534998131182266}
   - {fileID: 4127231959712630}
-  _cannonBallPrefab: {fileID: 1724454449060822, guid: e6d74b4362826b348a8c6a721d3ccb28,
+  _cannonBallPrefab: {fileID: 1438341116174966, guid: de8cc56796e914148bfe4107dda5a341,
     type: 2}
   _fireRate: 2
-  _rayDistance: 20
+  _rayDistance: 3.5
   _mask:
     serializedVersion: 2
     m_Bits: 256

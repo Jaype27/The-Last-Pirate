@@ -133,5 +133,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 15
-  _activeSpanLife: 0.5
-  _damageGiven: 10
+  _activeSpanLife: 1
+  _damageGiven: 100

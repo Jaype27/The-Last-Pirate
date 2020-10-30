@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 23173206797095650}
   - component: {fileID: 61369877493934870}
   - component: {fileID: 50019676424502452}
+  - component: {fileID: 114497726533824804}
   - component: {fileID: 114607215351484432}
   - component: {fileID: 114912987851898410}
   m_Layer: 0
@@ -544,22 +545,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114497726533824804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1871300675835312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7768de0d663baa34bb82ead05fc1211c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxEnemyHealth: 100
 --- !u!114 &114607215351484432
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1871300675835312}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f13c36aa5d7971745b6820097a01d6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _forwardSpeed: 2
   _reverseSpeed: 2
-  _rangeDistance: 3
-  _minRangeDistance: 2
-  _tooCloseToAlly: 1.5
+  _rangeDistance: 4
+  _minRangeDistance: 2.5
+  _tooCloseToAlly: 2
 --- !u!114 &114912987851898410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -578,8 +591,8 @@ MonoBehaviour:
   - {fileID: 4166171480242820}
   _cannonBallPrefab: {fileID: 1438341116174966, guid: de8cc56796e914148bfe4107dda5a341,
     type: 2}
-  _fireRate: 2
-  _rayDistance: 4
+  _fireRate: 3
+  _rayDistance: 5
   _mask:
     serializedVersion: 2
     m_Bits: 256

@@ -24,7 +24,7 @@ public class EnemyCannon : MonoBehaviour {
 	}
 
 	void CannonDetect() {
-		RaycastHit2D _hitInfo2d = Physics2D.Raycast(transform.position, -transform.right, _rayDistance);
+		RaycastHit2D _hitInfo2d = Physics2D.Raycast(transform.position, -transform.right, _rayDistance, _mask);
 		if(_hitInfo2d.collider != null) {
 			CannonShoot();
 			Debug.DrawLine(transform.position, _hitInfo2d.point, Color.red);
@@ -32,7 +32,7 @@ public class EnemyCannon : MonoBehaviour {
 			Debug.DrawLine(transform.position, transform.position - transform.right * _rayDistance, Color.green);
 		}
 
-		RaycastHit2D _hitInfo2d2 = Physics2D.Raycast(transform.position, transform.right, _rayDistance);
+		RaycastHit2D _hitInfo2d2 = Physics2D.Raycast(transform.position, transform.right, _rayDistance, _mask);
 		if(_hitInfo2d2.collider != null) {
 			CannonShoot();
 			Debug.DrawLine(transform.position, _hitInfo2d2.point, Color.red);

@@ -24,5 +24,6 @@ public class EnemyHealth : MonoBehaviour {
 	void Die() {
 		this.gameObject.SetActive(false);
 		WaveManager._enemyRemain--;
+		Debug.Log(WaveManager._enemyRemain);
 	}
 }

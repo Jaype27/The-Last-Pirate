@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour {
 	public float _flashMax = 0.1f;
 	private float _invincibleCounter;
 	public float _invincibleMax = 1.0f;
+	public float _damage = 10f;
 
 	// Use this for initialization
 	void Start () {

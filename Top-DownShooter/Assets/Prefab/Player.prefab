@@ -560,7 +560,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 46297fd2bf22b9944aaf5d62467c9769, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -797,6 +797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxPlayerHealth: 100
+  _healthBar: {fileID: 0}
   _playerRend: {fileID: 23779597939407254}
   _flashMax: 0.1
   _invincibleMax: 1

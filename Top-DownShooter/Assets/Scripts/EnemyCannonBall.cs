@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyCannonBall : MonoBehaviour {
 
-		public float _speed;
+	public float _speed;
 	private Rigidbody2D rb2d;
 	public float _activeSpanLife;
 	private float _activeTimer;

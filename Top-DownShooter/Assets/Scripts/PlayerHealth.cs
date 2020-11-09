@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
+
+	public static int _playerLives;
+	private int _remainingLives = 1;
 
 	public float _maxPlayerHealth;
 	private float _playerHealth;
@@ -13,11 +16,12 @@ public class PlayerHealth : MonoBehaviour {
 	public float _flashMax = 0.1f;
 	private float _invincibleCounter;
 	public float _invincibleMax = 1.0f;
-	public float _damage = 10f;
+	public GameManager _gm;
 
 	// Use this for initialization
 	void Start () {
 		_playerHealth = _maxPlayerHealth;
+		_playerLives = _remainingLives;
 	}
 	
 	// Update is called once per frame
@@ -61,8 +65,15 @@ public class PlayerHealth : MonoBehaviour {
 
 			if(_playerHealth <= 0) {
 				this.gameObject.SetActive(false);
+				_remainingLives--;
+				_gm.SpawnPlayer();
 			}
 		}
 	}
+
+	public void FullHealth() {
+		_playerHealth = _maxPlayerHealth;
+	}
+	
 
 }

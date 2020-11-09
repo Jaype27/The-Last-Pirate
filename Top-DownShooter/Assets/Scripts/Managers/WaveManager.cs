@@ -17,15 +17,18 @@ public class WaveManager : MonoBehaviour {
 
 	public Wave[] _waves;
 	public Transform[] _spawnPoint;
-	public float _nextWaveTime; // store time between waves
+	public float _nextWaveTime;
 	public float _waveCountDown;
 	private int _waveIndex;
+	private int _currentWave;
 	public Text _waveText;
 	public Text _noeText;
 	public Text _countdownText;
+	public GameManager _gm;
 
 	void Start() {
 		_waveCountDown = _nextWaveTime;
+		// _currentWave = _waveIndex; // TODO: When player dies, they can retry current wave
 	}
 
 	void Update() {
@@ -41,6 +44,10 @@ public class WaveManager : MonoBehaviour {
 			return;
 		}  else {
 			_countdownText.gameObject.SetActive(true);
+		}
+
+		if(_waveIndex == _waves.Length) {
+			_gm.GameOver();
 		}
 		
 		_waveCountDown -= Time.deltaTime;

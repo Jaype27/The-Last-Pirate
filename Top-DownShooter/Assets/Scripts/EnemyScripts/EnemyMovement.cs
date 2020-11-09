@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour {
 	public float _tooCloseToAlly;
 	private Rigidbody2D _rb2d;
 	private Transform _playerTarget;
-	private Transform _allyTarget;
+	// private Transform _allyTarget;
 
 	void Awake() {
 		_rb2d = GetComponent<Rigidbody2D>();
@@ -19,8 +19,9 @@ public class EnemyMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
-		_allyTarget = GameObject.FindGameObjectWithTag("Enemy").transform;
+		FindPlayer(); // TODO: Fix finding allies
+		// _playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
+		// _allyTarget = GameObject.FindGameObjectWithTag("Enemy").transform;
 	}
 	
 	// Update is called once per frame
@@ -30,6 +31,13 @@ public class EnemyMovement : MonoBehaviour {
 
 	void ShipMovement() {
 		
+		
+		if(_playerTarget == null) {
+			FindPlayer(); 
+			return;
+		}
+			
+
 
 		if(Vector2.Distance(transform.position, _playerTarget.position) > _rangeDistance) {
 			transform.position = Vector2.MoveTowards(transform.position, _playerTarget.position, _forwardSpeed * Time.deltaTime);
@@ -44,11 +52,18 @@ public class EnemyMovement : MonoBehaviour {
 			transform.up = _playerTarget.position - transform.position;
 		}
 
-		// Double Thinking about this
-		if(Vector2.Distance(transform.position, _allyTarget.position) <= _tooCloseToAlly) {
-			transform.position = Vector2.MoveTowards(transform.position, _allyTarget.position, -_reverseSpeed * Time.deltaTime);
-			// transform.up = _allyTarget.position - transform.position;
-		}
+		// // Double Thinking about this
+		// if(Vector2.Distance(transform.position, _allyTarget.position) <= _tooCloseToAlly) {
+		// 	transform.position = Vector2.MoveTowards(transform.position, _allyTarget.position, -_reverseSpeed * Time.deltaTime);
+		// 	// transform.up = _allyTarget.position - transform.position;
+		// }
+	}
+
+
+	void FindPlayer() {
+		GameObject _searchPlayer = GameObject.FindGameObjectWithTag("Player");
+		if(_searchPlayer != null)
+			_playerTarget = _searchPlayer.transform;
 	}
 
 	void OnDrawGizmos() {

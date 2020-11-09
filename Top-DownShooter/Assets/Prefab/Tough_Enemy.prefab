@@ -570,7 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _forwardSpeed: 2
   _reverseSpeed: 2
-  _rangeDistance: 4
+  _rangeDistance: 5
   _minRangeDistance: 2.5
   _tooCloseToAlly: 2
 --- !u!114 &114912987851898410

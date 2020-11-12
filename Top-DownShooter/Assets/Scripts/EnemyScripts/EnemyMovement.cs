@@ -45,7 +45,7 @@ public class EnemyMovement : MonoBehaviour {
 			 
 		} else if(Vector2.Distance(transform.position, _playerTarget.position) < _rangeDistance && Vector2.Distance(transform.position, _playerTarget.position) > _minRangeDistance) {
 			transform.right = _playerTarget.position - transform.position;
-			_rb2d.velocity = transform.up * -_forwardSpeed;
+			_rb2d.velocity = transform.up * _forwardSpeed;
 		
 		} else if(Vector2.Distance(transform.position, _playerTarget.position) <= _minRangeDistance) {
 			transform.position = Vector2.MoveTowards(transform.position, _playerTarget.position, -_reverseSpeed * Time.deltaTime);

@@ -7,7 +7,8 @@ public class PlayerHealth : MonoBehaviour {
 
 	public static int _playerLives;
 	private int _remainingLives = 1;
-
+	private int _goldPoints;
+	public Text _goldAmountText;
 	public float _maxPlayerHealth;
 	private float _playerHealth;
 	public Image _healthBar;
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
 		InvincibleFrames();
 		HealthBar();
+		_goldAmountText.text = "Gold: " + _goldPoints;
 	}
 
 	void InvincibleFrames() {
@@ -73,6 +75,11 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void FullHealth() {
 		_playerHealth = _maxPlayerHealth;
+	}
+
+
+	public void GoldTaken(int _amnt) {
+		_goldPoints += _amnt;
 	}
 	
 

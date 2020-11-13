@@ -314,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxEnemyHealth: 50
+  _goldDrop: {fileID: 1297384473379106, guid: d1e4802b465dfe145b6a6fcd253f2c5d, type: 2}
 --- !u!114 &114409117961313342
 MonoBehaviour:
   m_ObjectHideFlags: 1

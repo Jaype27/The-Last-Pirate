@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 117838130}
   - component: {fileID: 117838129}
   m_Layer: 5
-  m_Name: Points
+  m_Name: Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Points: 00'
+  m_Text: 'Gold: 00'
 --- !u!222 &117838130
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2462,6 +2462,11 @@ Prefab:
       propertyPath: _gm
       value: 
       objectReference: {fileID: 1540897986}
+    - target: {fileID: 114830963085077304, guid: f552033b1757897409a02766ea0156aa,
+        type: 2}
+      propertyPath: _goldAmountText
+      value: 
+      objectReference: {fileID: 117838129}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f552033b1757897409a02766ea0156aa, type: 2}
   m_IsPrefabAsset: 0

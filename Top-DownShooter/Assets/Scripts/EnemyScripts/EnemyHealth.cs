@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour {
 	[Header("Health")]
 	private float _enemyHealth;
 	public float _maxEnemyHealth;
+	public GameObject _goldDrop;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,7 @@ public class EnemyHealth : MonoBehaviour {
 		_enemyHealth -= _dmg;
 
 		if(_enemyHealth <= 0) {
+			Instantiate(_goldDrop,transform.position, transform.rotation);
 			Die();
 		}
 	}

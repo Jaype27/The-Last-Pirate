@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - p_cannonball
+  - e_cannonball
   layers:
   - Default
   - TransparentFX

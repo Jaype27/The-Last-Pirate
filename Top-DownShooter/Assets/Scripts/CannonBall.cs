@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CannonBall : MonoBehaviour {
+public class CannonBall : MonoBehaviour, IPooledObject {
 
 	public float _speed;
 	private Rigidbody2D rb2d;
@@ -15,14 +15,17 @@ public class CannonBall : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
 		_activeTimer = _activeSpanLife;
+	}
+
+	public void OnObjectSpawn() {
+		rb2d.velocity = transform.up * _speed;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		rb2d.velocity = transform.up * _speed;
-
+		OnObjectSpawn();
 		_activeTimer -= Time.deltaTime;
 		if(_activeTimer <= 0f) {
 			this.gameObject.SetActive(false);

@@ -10,6 +10,7 @@ public class LeftCannon : MonoBehaviour {
 	public float _fireRate;
 	private float _fireRateTimer;
 	PoolManager _poolMG;
+	public AudioSource[] _soundEffect;
 	
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,7 @@ public class LeftCannon : MonoBehaviour {
 		if(_fireRateTimer <= 0) {
 			if(Input.GetMouseButtonDown(0)) {
 				_poolMG.SpawnFromPool("p_cannonball", _firePoint.position, _firePoint.rotation);
+				_soundEffect[Random.Range(0, _soundEffect.Length)].Play();
 				// Instantiate(_cannonBallPrefab, _firePoint.position, _firePoint.rotation);
 				_fireRateTimer = _fireRate;
 			}

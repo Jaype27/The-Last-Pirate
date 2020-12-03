@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5.5
-  _activeSpanLife: 1
+  _activeSpanLife: 0.5
   _damageGiven: 10
 --- !u!212 &212535317178408982
 SpriteRenderer:

@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - p_cannonball
   - e_cannonball
+  - Gold
   layers:
   - Default
   - TransparentFX

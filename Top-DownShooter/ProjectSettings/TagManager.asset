@@ -8,6 +8,8 @@ TagManager:
   - p_cannonball
   - e_cannonball
   - Gold
+  - Powerup
+  - GrapeShot
   layers:
   - Default
   - TransparentFX

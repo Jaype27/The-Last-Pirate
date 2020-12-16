@@ -5,10 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
 
-	public static int _playerLives;
-	private int _remainingLives = 1;
-	private int _goldPoints;
-	public Text _goldAmountText;
+	public static int _playerLives = 1;
 	public float _maxPlayerHealth;
 	private float _playerHealth;
 	public Image _healthBar;
@@ -18,18 +15,17 @@ public class PlayerHealth : MonoBehaviour {
 	private float _invincibleCounter;
 	public float _invincibleMax = 1.0f;
 	public GameManager _gm;
+	
 
 	// Use this for initialization
 	void Start () {
-		_playerHealth = _maxPlayerHealth;
-		_playerLives = _remainingLives;
+		_playerHealth = _maxPlayerHealth;	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		InvincibleFrames();
 		HealthBar();
-		_goldAmountText.text = "Gold: " + _goldPoints;
 	}
 
 	void InvincibleFrames() {
@@ -67,7 +63,8 @@ public class PlayerHealth : MonoBehaviour {
 
 			if(_playerHealth <= 0) {
 				this.gameObject.SetActive(false);
-				_remainingLives--;
+				_playerLives--;
+				Debug.Log(_playerLives);
 				_gm.SpawnPlayer();
 			}
 		}
@@ -76,11 +73,4 @@ public class PlayerHealth : MonoBehaviour {
 	public void FullHealth() {
 		_playerHealth = _maxPlayerHealth;
 	}
-
-
-	public void GoldTaken(int _amnt) {
-		_goldPoints += _amnt;
-	}
-	
-
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 	public bool _gameOver;
@@ -18,10 +19,9 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		_livesNumberText.text = "Lives: " + PlayerHealth._playerLives;
-		
-		if (PlayerHealth._playerLives < 0) {
-				GameOver();
-			}	
+
+		if(_gameOver)
+			return;
 	}
 
 	public void GameOver() {
@@ -34,9 +34,20 @@ public class GameManager : MonoBehaviour {
 	}
 
 	IEnumerator Respawn() {
-		yield return new WaitForSeconds(2);
-		_player.transform.position = _playerSpawn.transform.position;
-		_player.gameObject.SetActive(true);
-		_player.FullHealth();
+
+		if (PlayerHealth._playerLives < 0) {
+				GameOver();
+		
+		} else {
+			yield return new WaitForSeconds(2);
+			_player.transform.position = _playerSpawn.transform.position;
+			_player.gameObject.SetActive(true);
+			_player.FullHealth();
+		}
 	} 
+
+	public void Retry() {
+		_gameOver = false;
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
 }

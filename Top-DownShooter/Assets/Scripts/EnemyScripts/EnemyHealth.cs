@@ -6,7 +6,8 @@ public class EnemyHealth : MonoBehaviour {
 	[Header("Health")]
 	private float _enemyHealth;
 	public float _maxEnemyHealth;
-	public GameObject _goldDrop;
+	public GameObject[] _lootDrop;
+	private float _percentDrop = 90f;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +19,7 @@ public class EnemyHealth : MonoBehaviour {
 		_enemyHealth -= _dmg;
 
 		if(_enemyHealth <= 0) {
-			Instantiate(_goldDrop,transform.position, transform.rotation);
+			SpawnDrop();
 			Die();
 		}
 	}
@@ -26,5 +27,17 @@ public class EnemyHealth : MonoBehaviour {
 	void Die() {
 		this.gameObject.SetActive(false);
 		WaveManager._enemyRemain--;
+	}
+
+	void SpawnDrop() {
+		float rand = Random.Range(0f, 100f);
+
+		for (int i = 0; i < _lootDrop.Length; i++) {
+			if(rand < _percentDrop) {
+				Instantiate(_lootDrop[0], transform.position, transform.rotation);
+			} else if(rand >= _percentDrop) {
+				Instantiate(_lootDrop[1], transform.position, transform.rotation);
+			}
+		}
 	}
 }

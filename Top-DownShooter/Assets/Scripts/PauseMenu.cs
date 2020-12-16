@@ -5,6 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour {
 
 	public GameObject _pauseMenu;
+	public GameObject _controlsMenu;
 
 	public void Pause() {
 		Time.timeScale = 0f;
@@ -16,11 +17,13 @@ public class PauseMenu : MonoBehaviour {
 		_pauseMenu.SetActive(false);
 	}
 
+	public void Controls() {
+		_controlsMenu.SetActive(true);
+	}
+
 	public void Quit() {
 		Application.Quit();
 	}
 
-	public void Back() {
-		this.gameObject.SetActive(false);
-	}
+	
 }

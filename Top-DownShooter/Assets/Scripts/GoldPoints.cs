@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GoldPoints : MonoBehaviour {
 
-	public int _goldAmount = 1;
+	public int _goldAmount;
 
 	void OnTriggerEnter2D(Collider2D other) {
 
-		PlayerHealth _playerHealth = other.GetComponent<PlayerHealth>();
+		PlayerCombat _playerCombat = other.GetComponent<PlayerCombat>();
 
 		if(other.gameObject.tag == "Player") {
-			_playerHealth.GoldTaken(_goldAmount);
+			_playerCombat.GoldTaken(_goldAmount);
 			this.gameObject.SetActive(false);
 		}
 	}

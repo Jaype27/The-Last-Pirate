@@ -416,7 +416,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxEnemyHealth: 100
-  _goldDrop: {fileID: 1207243194912780, guid: 9d434fb13eee88b42a4da47f049cee00, type: 2}
+  _lootDrop:
+  - {fileID: 1207243194912780, guid: 9d434fb13eee88b42a4da47f049cee00, type: 2}
+  - {fileID: 1758811525670216, guid: 5bb89e7b3b470ca4e877a33d0865a6d1, type: 2}
 --- !u!114 &114607215351484432
 MonoBehaviour:
   m_ObjectHideFlags: 1

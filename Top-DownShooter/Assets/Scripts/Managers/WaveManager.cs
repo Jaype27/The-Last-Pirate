@@ -17,18 +17,15 @@ public class WaveManager : MonoBehaviour {
 
 	public Wave[] _waves;
 	public Transform[] _spawnPoint;
-	public float _nextWaveTime;
 	public float _waveCountDown;
 	private int _waveIndex;
-	private int _currentWave;
 	public Text _waveText;
 	public Text _noeText;
 	public Text _countdownText;
 	public GameManager _gm;
 
 	void Start() {
-		_waveCountDown = _nextWaveTime;
-		// _currentWave = _waveIndex; // TODO: When player dies, they can retry current wave
+		_waveIndex = 0;
 	}
 
 	void Update() {
@@ -37,43 +34,36 @@ public class WaveManager : MonoBehaviour {
 			return;
 		}
 
-		if(_waveCountDown <= 0) {
-			StartCoroutine(SpawnWave());
-			_waveCountDown = _nextWaveTime;
-			_countdownText.gameObject.SetActive(false);
-			return;
-		}  else {
-			_countdownText.gameObject.SetActive(true);
+		if(_waveIndex == _waves.Length && _enemyRemain == 0) {
+			_gm._gameOver = true;
+			_gm.GameOver();
+			this.enabled = false;
 		}
 
-		if(_waveIndex == _waves.Length) {
-			_gm.GameOver();
-		}
-		
+		if(_waveCountDown <= 0f) { // <-- Something about this won't reload scene properly / Only when timer is counting down
+			StartCoroutine(SpawnWave());
+			_countdownText.gameObject.SetActive(false);
+			return;
+		} 
+
 		_waveCountDown -= Time.deltaTime;
 		_waveCountDown = Mathf.Clamp(_waveCountDown, 0f, Mathf.Infinity);
 		_countdownText.text = string.Format("{0:00.00}", _waveCountDown);
-
-
 	}
 
 	IEnumerator SpawnWave () {
 
 		Wave _wave = _waves[_waveIndex];		
 
-		_waveIndex++;
+		
 		_waveText.text = "Wave: " + _waveIndex;
 
 		for(int i = 0; i < _wave._enemyCount; i++) {
 			SpawnEnemy(_wave._enemyType[Random.Range(0, _wave._enemyType.Length)]);
 			yield return new WaitForSeconds(_wave._spawnRate);
-			
 		}
-		
-		if(_waveIndex == _waves.Length) {
-			this.enabled = false;
-		}
-		
+
+		_waveIndex++;
 	}
 	
 	void SpawnEnemy(GameObject _enemy) {

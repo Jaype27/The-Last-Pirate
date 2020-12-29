@@ -34,13 +34,9 @@ public class WaveManager : MonoBehaviour {
 			return;
 		}
 
-		if(_waveIndex == _waves.Length && _enemyRemain == 0) {
-			_gm._gameOver = true;
-			_gm.GameOver();
-			this.enabled = false;
-		}
+		
 
-		if(_waveCountDown <= 0f) { // <-- Something about this won't reload scene properly / Only when timer is counting down
+		if(_waveCountDown <= 0f) {
 			StartCoroutine(SpawnWave());
 			_countdownText.gameObject.SetActive(false);
 			return;
@@ -53,9 +49,14 @@ public class WaveManager : MonoBehaviour {
 
 	IEnumerator SpawnWave () {
 
-		Wave _wave = _waves[_waveIndex];		
+		if(_waveIndex == _waves.Length && _enemyRemain == 0) {
+			_gm._gameOver = true;
+			_gm.GameOver();
+			this.enabled = false;
+		}	
 
-		
+		Wave _wave = _waves[_waveIndex];	
+
 		_waveText.text = "Wave: " + _waveIndex;
 
 		for(int i = 0; i < _wave._enemyCount; i++) {

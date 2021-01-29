@@ -116,8 +116,11 @@ GameObject:
   - component: {fileID: 70729966011226712}
   - component: {fileID: 50538867089320718}
   - component: {fileID: 114948381995670208}
-  - component: {fileID: 114009101633603692}
   - component: {fileID: 114632551401034768}
+  - component: {fileID: 114009101633603692}
+  - component: {fileID: 114008080639651200}
+  - component: {fileID: 114575495581238748}
+  - component: {fileID: 114024377966456038}
   m_Layer: 0
   m_Name: Man_O_War
   m_TagString: Enemy
@@ -368,7 +371,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288711348694512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalPosition: {x: -4.543706, y: 7.2852015, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_Children:
   - {fileID: 4200091352678524}
@@ -506,7 +509,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!70 &70729966011226712
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -522,6 +525,41 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.4, y: 1}
   m_Direction: 0
+--- !u!114 &114008080639651200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1288711348694512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  radius: 1
+  height: 2
+  repathRate: 0.5
+  canSearch: 1
+  canMove: 1
+  maxSpeed: 2
+  gravity: {x: NaN, y: NaN, z: NaN}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  centerOffsetCompatibility: NaN
+  orientation: 1
+  enableRotation: 1
+  targetCompatibility: {fileID: 0}
+  maxAcceleration: -2.5
+  rotationSpeed: 360
+  slowdownDistance: 2
+  pickNextWaypointDist: 2
+  endReachedDistance: 5
+  alwaysDrawGizmos: 1
+  slowWhenNotFacingTarget: 0
+  whenCloseToDestination: 0
+  constrainInsideGraph: 0
 --- !u!114 &114009101633603692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -538,6 +576,46 @@ MonoBehaviour:
   _rangeDistance: 5
   _minRangeDistance: 2.5
   _tooCloseToAlly: 2
+--- !u!114 &114024377966456038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1288711348694512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &114575495581238748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1288711348694512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  target: {fileID: 0}
 --- !u!114 &114632551401034768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -556,13 +634,12 @@ MonoBehaviour:
   - {fileID: 4173645746776874}
   - {fileID: 4495612329410442}
   - {fileID: 4203492698632066}
-  _cannonBallPrefab: {fileID: 1438341116174966, guid: de8cc56796e914148bfe4107dda5a341,
-    type: 2}
   _fireRate: 4
   _rayDistance: 5
   _mask:
     serializedVersion: 2
     m_Bits: 256
+  _cannonBallPrefabTag: e_cannonball
 --- !u!114 &114948381995670208
 MonoBehaviour:
   m_ObjectHideFlags: 1

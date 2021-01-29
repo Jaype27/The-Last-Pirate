@@ -5,12 +5,12 @@ using UnityEngine;
 public class EnemyCannon : MonoBehaviour {
 
 	public Transform[] _firePoint;
-	public GameObject _cannonBallPrefab;
 	[Header("Firerate")]
 	public float _fireRate;
 	private float _fireRateTimer;
 	public float _rayDistance;
 	public LayerMask _mask;
+	public string _cannonBallPrefabTag;
 	PoolManager _poolMG;
 
 
@@ -46,7 +46,7 @@ public class EnemyCannon : MonoBehaviour {
 	void CannonShoot() {
 		if(_fireRateTimer <= 0) {
 			for(int i = 0; i < _firePoint.Length; i++) {
-				_poolMG.SpawnFromPool("e_cannonball", _firePoint[i].position, _firePoint[i].rotation);				
+				_poolMG.SpawnFromPool(_cannonBallPrefabTag, _firePoint[i].position, _firePoint[i].rotation);				
 				// Instantiate(_cannonBallPrefab, _firePoint[i].position, _firePoint[i].rotation);
 			}
 			_fireRateTimer = _fireRate;

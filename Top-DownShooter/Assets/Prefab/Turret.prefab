@@ -65,8 +65,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1539087007795516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2, y: 2.46, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: -11.149011, y: 4.4454308, z: 0}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_Children:
   - {fileID: 4275478190676958}
   m_Father: {fileID: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  _rotationSpeed: 5
+  _rotationSpeed: 15
 --- !u!114 &114845429546349738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,13 +123,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firePoint:
   - {fileID: 4275478190676958}
-  _cannonBallPrefab: {fileID: 1438341116174966, guid: de8cc56796e914148bfe4107dda5a341,
-    type: 2}
-  _fireRate: 3
+  _fireRate: 1
   _rayDistance: 10
   _mask:
     serializedVersion: 2
     m_Bits: 256
+  _cannonBallPrefabTag: t_cannonball
 --- !u!212 &212310155775552888
 SpriteRenderer:
   m_ObjectHideFlags: 1

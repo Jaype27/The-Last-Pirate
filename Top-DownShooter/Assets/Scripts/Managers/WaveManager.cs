@@ -18,14 +18,16 @@ public class WaveManager : MonoBehaviour {
 	public Wave[] _waves;
 	public Transform[] _spawnPoint;
 	public float _waveCountDown;
-	private int _waveIndex;
+	private int _waveIndex = 0;
+	public int _waveNumber = 1;
 	public Text _waveText;
 	public Text _noeText;
 	public Text _countdownText;
 	public GameManager _gm;
 
+
 	void Start() {
-		_waveIndex = 0;
+		
 	}
 
 	void Update() {
@@ -33,6 +35,12 @@ public class WaveManager : MonoBehaviour {
 		if(_enemyRemain > 0) {
 			return;
 		}
+
+		if(_waveIndex == _waves.Length) {
+			_gm._gameOver = true;
+			_gm.GameOver();
+			this.enabled = false;
+		}	
 
 		
 
@@ -48,12 +56,6 @@ public class WaveManager : MonoBehaviour {
 	}
 
 	IEnumerator SpawnWave () {
-
-		if(_waveIndex == _waves.Length && _enemyRemain == 0) {
-			_gm._gameOver = true;
-			_gm.GameOver();
-			this.enabled = false;
-		}	
 
 		Wave _wave = _waves[_waveIndex];	
 

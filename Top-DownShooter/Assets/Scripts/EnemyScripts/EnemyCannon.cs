@@ -47,7 +47,7 @@ public class EnemyCannon : MonoBehaviour {
 		if(_fireRateTimer <= 0) {
 			for(int i = 0; i < _firePoint.Length; i++) {
 				_poolMG.SpawnFromPool("e_cannonball", _firePoint[i].position, _firePoint[i].rotation);				
-				Instantiate(_cannonBallPrefab, _firePoint[i].position, _firePoint[i].rotation);
+				// Instantiate(_cannonBallPrefab, _firePoint[i].position, _firePoint[i].rotation);
 			}
 			_fireRateTimer = _fireRate;
 		} else {

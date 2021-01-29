@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
 
-	public static int _playerLives = 1;
 	public float _maxPlayerHealth;
 	private float _playerHealth;
 	public Image _healthBar;
@@ -19,7 +18,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_playerHealth = _maxPlayerHealth;	
+		_playerHealth = _maxPlayerHealth;
 	}
 	
 	// Update is called once per frame
@@ -63,8 +62,6 @@ public class PlayerHealth : MonoBehaviour {
 
 			if(_playerHealth <= 0) {
 				this.gameObject.SetActive(false);
-				_playerLives--;
-				Debug.Log(_playerLives);
 				_gm.SpawnPlayer();
 			}
 		}

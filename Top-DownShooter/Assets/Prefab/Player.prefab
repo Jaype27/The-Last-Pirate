@@ -545,7 +545,7 @@ MonoBehaviour:
   - {fileID: 4838981697169932}
   _cannonBallPrefab: {fileID: 1724454449060822, guid: e6d74b4362826b348a8c6a721d3ccb28,
     type: 2}
-  _fireRate: 0.5
+  _fireRate: 0.1
   _soundEffect:
   - {fileID: 0}
   - {fileID: 0}
@@ -581,7 +581,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _abilityDuration: 5
+  - {fileID: 0}
+  - {fileID: 0}
+  _maxAbilityDuration: 5
+  _durationBar: {fileID: 0}
 --- !u!114 &114356482708005254
 MonoBehaviour:
   m_ObjectHideFlags: 1

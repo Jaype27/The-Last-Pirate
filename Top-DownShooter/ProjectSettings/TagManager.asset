@@ -10,6 +10,7 @@ TagManager:
   - Gold
   - Powerup
   - GrapeShot
+  - windbox
   layers:
   - Default
   - TransparentFX

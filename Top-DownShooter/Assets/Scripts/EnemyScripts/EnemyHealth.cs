@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour {
 	private float _enemyHealth;
 	public float _maxEnemyHealth;
 	public GameObject[] _lootDrop;
-	private float _percentDrop = 90f;
+	private float _percentDrop = 95f;
 
 	// Use this for initialization
 	void Start () {

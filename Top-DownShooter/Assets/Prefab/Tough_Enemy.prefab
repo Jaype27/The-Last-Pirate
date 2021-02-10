@@ -164,10 +164,8 @@ GameObject:
   - component: {fileID: 50019676424502452}
   - component: {fileID: 114497726533824804}
   - component: {fileID: 114912987851898410}
-  - component: {fileID: 114607215351484432}
-  - component: {fileID: 114854020540727334}
   - component: {fileID: 114737466689420528}
-  - component: {fileID: 114937183606572318}
+  - component: {fileID: 114660649586887822}
   m_Layer: 0
   m_Name: Tough_Enemy
   m_TagString: Enemy
@@ -422,7 +420,7 @@ MonoBehaviour:
   _lootDrop:
   - {fileID: 1207243194912780, guid: 9d434fb13eee88b42a4da47f049cee00, type: 2}
   - {fileID: 1758811525670216, guid: 5bb89e7b3b470ca4e877a33d0865a6d1, type: 2}
---- !u!114 &114607215351484432
+--- !u!114 &114660649586887822
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -430,14 +428,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1871300675835312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f13c36aa5d7971745b6820097a01d6f1, type: 3}
+  m_Script: {fileID: 11500000, guid: c97c430e25a2ed84eb5d942209b59a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _forwardSpeed: 3
-  _reverseSpeed: 2
-  _rangeDistance: 5
-  _minRangeDistance: 2.5
-  _tooCloseToAlly: 2
+  _playerTarget: {fileID: 0}
+  _forwardSpeed: 350
+  _wayPointDistance: 3
+  _reachedEndPath: 0
 --- !u!114 &114737466689420528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -465,41 +462,6 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &114854020540727334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1871300675835312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 2
-  radius: 1
-  height: 2
-  repathRate: 0.5
-  canSearch: 1
-  canMove: 1
-  maxSpeed: 3
-  gravity: {x: NaN, y: NaN, z: NaN}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  centerOffsetCompatibility: NaN
-  orientation: 1
-  enableRotation: 1
-  targetCompatibility: {fileID: 0}
-  maxAcceleration: -2.5
-  rotationSpeed: 360
-  slowdownDistance: 2
-  pickNextWaypointDist: 2
-  endReachedDistance: 5
-  alwaysDrawGizmos: 1
-  slowWhenNotFacingTarget: 0
-  whenCloseToDestination: 0
-  constrainInsideGraph: 0
 --- !u!114 &114912987851898410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -522,19 +484,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _cannonBallPrefabTag: e_cannonball
---- !u!114 &114937183606572318
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1871300675835312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  target: {fileID: 0}
 --- !u!212 &212006036517820586
 SpriteRenderer:
   m_ObjectHideFlags: 1

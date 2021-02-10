@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	public Text _livesNumberText;
 	public GameObject _playerSpawn;
 	public PlayerHealth _player;
+	public WaveManager _wm;
 
 	// Use this for initialization
 	void Start () {
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour {
 	public void GameOver() {
 		_gameOver = true;
 		_gameOverScreen.SetActive(true);
+		_wm.enabled = false;
 	}
 
 	public void SpawnPlayer() {
@@ -45,7 +47,6 @@ public class GameManager : MonoBehaviour {
 			_player.transform.position = _playerSpawn.transform.position;
 			_player.gameObject.SetActive(true);
 			_playerLives--;
-			Debug.Log(_playerLives);
 			_player.FullHealth();
 		}
 	} 

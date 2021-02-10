@@ -70,10 +70,8 @@ GameObject:
   - component: {fileID: 50866058655150272}
   - component: {fileID: 114056497246285036}
   - component: {fileID: 114409117961313342}
-  - component: {fileID: 114011176941017862}
-  - component: {fileID: 114121119135656952}
-  - component: {fileID: 114319057059980398}
   - component: {fileID: 114740530758616338}
+  - component: {fileID: 114147467141652026}
   m_Layer: 0
   m_Name: Basic_Enemy
   m_TagString: Enemy
@@ -245,7 +243,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423562265408586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.25, y: 8.62, z: 0}
+  m_LocalPosition: {x: 8.410537, y: -5.511079, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4427665643150968}
@@ -266,14 +264,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 1.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &70841919938055180
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -289,22 +287,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.4, y: 1}
   m_Direction: 0
---- !u!114 &114011176941017862
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1423562265408586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f13c36aa5d7971745b6820097a01d6f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _forwardSpeed: 3
-  _reverseSpeed: 2
-  _rangeDistance: 4
-  _minRangeDistance: 2.5
-  _tooCloseToAlly: 2
 --- !u!114 &114056497246285036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,7 +302,7 @@ MonoBehaviour:
   _lootDrop:
   - {fileID: 1297384473379106, guid: d1e4802b465dfe145b6a6fcd253f2c5d, type: 2}
   - {fileID: 1758811525670216, guid: 5bb89e7b3b470ca4e877a33d0865a6d1, type: 2}
---- !u!114 &114121119135656952
+--- !u!114 &114147467141652026
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -328,53 +310,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1423562265408586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
+  m_Script: {fileID: 11500000, guid: c97c430e25a2ed84eb5d942209b59a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 2
-  radius: 1
-  height: 2
-  repathRate: 0.5
-  canSearch: 1
-  canMove: 1
-  maxSpeed: 3
-  gravity: {x: NaN, y: NaN, z: NaN}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  centerOffsetCompatibility: NaN
-  orientation: 1
-  enableRotation: 1
-  targetCompatibility: {fileID: 0}
-  maxAcceleration: -2.5
-  rotationSpeed: 360
-  slowdownDistance: 2
-  pickNextWaypointDist: 2
-  endReachedDistance: 4
-  alwaysDrawGizmos: 1
-  slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 1
-  constrainInsideGraph: 0
---- !u!114 &114319057059980398
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1423562265408586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  target: {fileID: 0}
+  _playerTarget: {fileID: 0}
+  _forwardSpeed: 400
+  _wayPointDistance: 10
+  _reachedEndPath: 0
 --- !u!114 &114409117961313342
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423562265408586}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5eb1e44e4bfe13441bb840650329d005, type: 3}
   m_Name: 

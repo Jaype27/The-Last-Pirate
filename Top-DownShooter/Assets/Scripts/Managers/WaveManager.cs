@@ -18,8 +18,8 @@ public class WaveManager : MonoBehaviour {
 	public Wave[] _waves;
 	public Transform[] _spawnPoint;
 	public float _waveCountDown;
-	private int _waveIndex = 0;
-	public int _waveNumber = 1;
+	private int _waveIndex;
+	public int _waveNumber;
 	public Text _waveText;
 	public Text _noeText;
 	public Text _countdownText;
@@ -27,7 +27,8 @@ public class WaveManager : MonoBehaviour {
 
 
 	void Start() {
-		
+		_waveIndex = 0;
+		_waveNumber = 0;
 	}
 
 	void Update() {
@@ -40,26 +41,26 @@ public class WaveManager : MonoBehaviour {
 			_gm._gameOver = true;
 			_gm.GameOver();
 			this.enabled = false;
-		}	
-
-		
+		}		
 
 		if(_waveCountDown <= 0f) {
 			StartCoroutine(SpawnWave());
 			_countdownText.gameObject.SetActive(false);
-			return;
 		} 
 
 		_waveCountDown -= Time.deltaTime;
 		_waveCountDown = Mathf.Clamp(_waveCountDown, 0f, Mathf.Infinity);
 		_countdownText.text = string.Format("{0:00.00}", _waveCountDown);
+
+		_waveText.text = "Wave: " + _waveNumber;
+		
 	}
 
 	IEnumerator SpawnWave () {
 
 		Wave _wave = _waves[_waveIndex];	
 
-		_waveText.text = "Wave: " + _waveIndex;
+		_waveNumber++;
 
 		for(int i = 0; i < _wave._enemyCount; i++) {
 			SpawnEnemy(_wave._enemyType[Random.Range(0, _wave._enemyType.Length)]);

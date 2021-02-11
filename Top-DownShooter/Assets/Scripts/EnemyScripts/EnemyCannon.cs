@@ -26,20 +26,12 @@ public class EnemyCannon : MonoBehaviour {
 	}
 
 	void CannonDetect() {
-		RaycastHit2D _hitInfo2d = Physics2D.Raycast(transform.position, -transform.right, _rayDistance, _mask);
+		RaycastHit2D _hitInfo2d = Physics2D.Raycast(transform.position, transform.up, _rayDistance, _mask);
 		if(_hitInfo2d.collider != null) {
 			CannonShoot();
 			Debug.DrawLine(transform.position, _hitInfo2d.point, Color.red);
 		} else {
-			Debug.DrawLine(transform.position, transform.position - transform.right * _rayDistance, Color.green);
-		}
-
-		RaycastHit2D _hitInfo2d2 = Physics2D.Raycast(transform.position, transform.right, _rayDistance, _mask);
-		if(_hitInfo2d2.collider != null) {
-			CannonShoot();
-			Debug.DrawLine(transform.position, _hitInfo2d2.point, Color.red);
-		} else {
-			Debug.DrawLine(transform.position, transform.position + transform.right * _rayDistance, Color.red);
+			Debug.DrawLine(transform.position, transform.position + transform.up * _rayDistance, Color.green);
 		}
 	}
 
@@ -47,7 +39,6 @@ public class EnemyCannon : MonoBehaviour {
 		if(_fireRateTimer <= 0) {
 			for(int i = 0; i < _firePoint.Length; i++) {
 				_poolMG.SpawnFromPool(_cannonBallPrefabTag, _firePoint[i].position, _firePoint[i].rotation);				
-				// Instantiate(_cannonBallPrefab, _firePoint[i].position, _firePoint[i].rotation);
 			}
 			_fireRateTimer = _fireRate;
 		} else {

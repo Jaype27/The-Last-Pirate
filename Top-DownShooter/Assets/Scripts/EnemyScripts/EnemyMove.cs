@@ -8,9 +8,11 @@ public class EnemyMove : MonoBehaviour {
 	public Transform _playerTarget;
 	public float _forwardSpeed;
 	public float _wayPointDistance; // TODO: Change Later
+	public float _stopDistance;
 	Path _path;
 	int _currentWaypoint = 0;
 	public bool _reachedEndPath = false;
+	public float _repeateRate;
 
 	Seeker _seeker;
 	Rigidbody2D _rb2d;
@@ -22,7 +24,7 @@ public class EnemyMove : MonoBehaviour {
 		_reachedEndPath = false;
 
 		FindPlayer();
-		InvokeRepeating("UpdatePath", 0f, 0.5f);
+		InvokeRepeating("UpdatePath", 0f, _repeateRate);
 		
 		
 	}
@@ -67,15 +69,20 @@ public class EnemyMove : MonoBehaviour {
 		Vector2 dir = ((Vector2)_path.vectorPath[_currentWaypoint] - _rb2d.position).normalized;
 		Vector2 force = dir * _forwardSpeed * Time.deltaTime;
 
-		_rb2d.AddForce(force);
+		if(Vector2.Distance(transform.position, _playerTarget.position) > _stopDistance) {
 
-		float dist = Vector2.Distance(_rb2d.position, _path.vectorPath[_currentWaypoint]);
+			_rb2d.AddForce(force);
 
-		if(dist < _wayPointDistance) {
-			_currentWaypoint++;
+			float dist = Vector2.Distance(_rb2d.position, _path.vectorPath[_currentWaypoint]);
+
+			if(dist < _wayPointDistance) {
+				_currentWaypoint++;
+			}
+
+			transform.up = _rb2d.velocity;
+		} else {
+			transform.up = _playerTarget.position - transform.position;
 		}
-
-		transform.up = _rb2d.velocity;
 	}
 
 

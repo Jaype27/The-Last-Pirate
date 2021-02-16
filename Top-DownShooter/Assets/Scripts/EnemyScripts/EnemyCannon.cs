@@ -33,6 +33,7 @@ public class EnemyCannon : MonoBehaviour {
 		} else {
 			Debug.DrawLine(transform.position, transform.position + transform.up * _rayDistance, Color.green);
 		}
+		_fireRateTimer -= Time.deltaTime;
 	}
 
 	void CannonShoot() {
@@ -41,8 +42,6 @@ public class EnemyCannon : MonoBehaviour {
 				_poolMG.SpawnFromPool(_cannonBallPrefabTag, _firePoint[i].position, _firePoint[i].rotation);				
 			}
 			_fireRateTimer = _fireRate;
-		} else {
-			_fireRateTimer -= Time.deltaTime;
 		}
 	}
 }

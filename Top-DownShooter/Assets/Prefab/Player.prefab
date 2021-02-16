@@ -649,7 +649,7 @@ MonoBehaviour:
   _healthBar: {fileID: 0}
   _playerRend: {fileID: 212148107727333464}
   _flashMax: 0.1
-  _invincibleMax: 1
+  _invincibleMax: 0.5
   _gm: {fileID: 0}
 --- !u!114 &114894832054907124
 MonoBehaviour:

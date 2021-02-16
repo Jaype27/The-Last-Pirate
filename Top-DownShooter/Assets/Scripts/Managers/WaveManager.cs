@@ -29,6 +29,7 @@ public class WaveManager : MonoBehaviour {
 	void Start() {
 		_waveIndex = 0;
 		_waveNumber = 0;
+		_enemyRemain = 0;
 	}
 
 	void Update() {
@@ -37,23 +38,23 @@ public class WaveManager : MonoBehaviour {
 			return;
 		}
 
-		if(_waveIndex == _waves.Length) {
+		if(_waveIndex == _waves.Length || GameManager._playerLives <= 0) {
 			_gm._gameOver = true;
 			_gm.GameOver();
 			this.enabled = false;
-		}		
+			return;
+		}	
 
 		if(_waveCountDown <= 0f) {
 			StartCoroutine(SpawnWave());
 			_countdownText.gameObject.SetActive(false);
+			return;
 		} 
 
 		_waveCountDown -= Time.deltaTime;
 		_waveCountDown = Mathf.Clamp(_waveCountDown, 0f, Mathf.Infinity);
 		_countdownText.text = string.Format("{0:00.00}", _waveCountDown);
 
-		_waveText.text = "Wave: " + _waveNumber;
-		
 	}
 
 	IEnumerator SpawnWave () {
@@ -61,6 +62,7 @@ public class WaveManager : MonoBehaviour {
 		Wave _wave = _waves[_waveIndex];	
 
 		_waveNumber++;
+		_waveText.text = "Wave: " + _waveNumber;
 
 		for(int i = 0; i < _wave._enemyCount; i++) {
 			SpawnEnemy(_wave._enemyType[Random.Range(0, _wave._enemyType.Length)]);

@@ -70,8 +70,8 @@ GameObject:
   - component: {fileID: 50866058655150272}
   - component: {fileID: 114056497246285036}
   - component: {fileID: 114409117961313342}
-  - component: {fileID: 114740530758616338}
   - component: {fileID: 114147467141652026}
+  - component: {fileID: 114740530758616338}
   m_Layer: 0
   m_Name: Basic_Enemy
   m_TagString: Enemy
@@ -184,7 +184,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423562265408586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.43212, y: 0.6794424, z: 0}
+  m_LocalPosition: {x: -12, y: -3, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4427665643150968}
@@ -256,8 +256,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerTarget: {fileID: 0}
   _forwardSpeed: 400
-  _wayPointDistance: 6
-  _stopDistance: 6
+  _wayPointDistance: 4
+  _stopDistance: 4
   _reachedEndPath: 0
   _repeateRate: 0.5
 --- !u!114 &114409117961313342
@@ -274,7 +274,7 @@ MonoBehaviour:
   _firePoint:
   - {fileID: 4534998131182266}
   _fireRate: 2
-  _rayDistance: 4
+  _rayDistance: 5
   _mask:
     serializedVersion: 2
     m_Bits: 256

@@ -117,8 +117,8 @@ GameObject:
   - component: {fileID: 50019676424502452}
   - component: {fileID: 114497726533824804}
   - component: {fileID: 114912987851898410}
-  - component: {fileID: 114737466689420528}
   - component: {fileID: 114660649586887822}
+  - component: {fileID: 114737466689420528}
   m_Layer: 0
   m_Name: Tough_Enemy
   m_TagString: Enemy
@@ -174,7 +174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1871300675835312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.147973, y: 9.381415, z: 0}
+  m_LocalPosition: {x: -3.83, y: -3, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children:
   - {fileID: 4921547426496932}
@@ -315,8 +315,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerTarget: {fileID: 0}
   _forwardSpeed: 350
-  _wayPointDistance: 9
-  _stopDistance: 9
+  _wayPointDistance: 5
+  _stopDistance: 5
   _reachedEndPath: 0
   _repeateRate: 0.5
 --- !u!114 &114737466689420528

@@ -23,14 +23,13 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		_livesNumberText.text = "Lives: " + _playerLives;
 
-		if(_gameOver)
-			return;
 	}
 
 	public void GameOver() {
 		_gameOver = true;
 		_gameOverScreen.SetActive(true);
 		_wm.enabled = false;
+		return;
 	}
 
 	public void SpawnPlayer() {
@@ -40,8 +39,7 @@ public class GameManager : MonoBehaviour {
 	IEnumerator Respawn() {
 
 		if (_playerLives <= 0) {
-				GameOver();
-		
+			GameOver();
 		} else {
 			yield return new WaitForSeconds(2);
 			_player.transform.position = _playerSpawn.transform.position;

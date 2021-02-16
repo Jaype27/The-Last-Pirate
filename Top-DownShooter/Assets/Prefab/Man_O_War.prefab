@@ -117,8 +117,8 @@ GameObject:
   - component: {fileID: 50538867089320718}
   - component: {fileID: 114948381995670208}
   - component: {fileID: 114632551401034768}
-  - component: {fileID: 114024377966456038}
   - component: {fileID: 114720058079014340}
+  - component: {fileID: 114024377966456038}
   m_Layer: 0
   m_Name: Man_O_War
   m_TagString: Enemy
@@ -279,7 +279,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288711348694512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5880096, y: -12.797594, z: 0}
+  m_LocalPosition: {x: -8.27, y: -3, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_Children:
   - {fileID: 4200091352678524}
@@ -467,8 +467,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerTarget: {fileID: 0}
   _forwardSpeed: 400
-  _wayPointDistance: 10
-  _stopDistance: 10
+  _wayPointDistance: 6
+  _stopDistance: 6
   _reachedEndPath: 0
   _repeateRate: 0.5
 --- !u!114 &114948381995670208

@@ -49,10 +49,20 @@ public class PlayerHealth : MonoBehaviour {
 		_healthBar.fillAmount = _playerHealth / _maxPlayerHealth;
 	}
 
-	public void DamageTaken(float _dmg) {
+	void OnTriggerEnter2D(Collider2D other) {
+		CannonBall cannonBall = other.gameObject.GetComponent<CannonBall>();
+
+		if(!cannonBall) { return; }
+
+		DamageTaken(cannonBall);
+	}
+
+	public void DamageTaken(CannonBall cannonBall) {
 
 		if(_invincibleCounter <= 0) {
-			_playerHealth -= _dmg;
+
+			_playerHealth -= cannonBall.GetDamage();
+			cannonBall.Hit();
 
 			_invincibleCounter = _invincibleMax;
 

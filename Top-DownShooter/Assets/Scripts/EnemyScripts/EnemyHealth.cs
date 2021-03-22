@@ -6,8 +6,9 @@ public class EnemyHealth : MonoBehaviour {
 	[Header("Health")]
 	private float _enemyHealth;
 	public float _maxEnemyHealth;
-	public GameObject[] _lootDrop;
-	private float _percentDrop = 95f;
+	public GameObject _lootDrop;
+	// public GameObject[] _lootDrop;
+	// private float _percentDrop = 95f;
 
 	// Use this for initialization
 	void Start () {
@@ -15,8 +16,17 @@ public class EnemyHealth : MonoBehaviour {
 		
 	}
 
-	public void DamageTaken(float _dmg) {
-		_enemyHealth -= _dmg;
+	void OnTriggerEnter2D(Collider2D other) {
+		CannonBall cannonBall = other.gameObject.GetComponent<CannonBall>();
+
+		if(!cannonBall) { return; }
+
+		DamageTaken(cannonBall);
+	}
+
+	public void DamageTaken(CannonBall cannonBall) {
+		_enemyHealth -= cannonBall.GetDamage();
+		cannonBall.Hit();
 
 		if(_enemyHealth <= 0) {
 			SpawnDrop();
@@ -30,14 +40,17 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	void SpawnDrop() {
-		float rand = Random.Range(0f, 100f);
 
-		for (int i = 0; i < _lootDrop.Length; i++) {
-			if(rand < _percentDrop) {
-				Instantiate(_lootDrop[0], transform.position, transform.rotation);
-			} else if(rand >= _percentDrop) {
-				Instantiate(_lootDrop[1], transform.position, transform.rotation);
-			}
-		}
+		Instantiate(_lootDrop, transform.position, transform.rotation);
+
+		// float rand = Random.Range(0f, 100f);
+
+		// for (int i = 0; i < _lootDrop.Length; i++) {
+		// 	if(rand < _percentDrop) {
+		// 		Instantiate(_lootDrop[0], transform.position, transform.rotation);
+		// 	} else if(rand >= _percentDrop) {
+		// 		Instantiate(_lootDrop[1], transform.position, transform.rotation);
+		// 	}
+		// }
 	}
 }

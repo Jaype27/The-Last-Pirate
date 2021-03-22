@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4534998131182266}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4868641713070438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cannons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4405776054893270}
   - component: {fileID: 212342541895950832}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 114409117961313342}
   - component: {fileID: 114147467141652026}
   - component: {fileID: 114740530758616338}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Basic_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4427665643150968}
   - component: {fileID: 212953870826686052}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4245759113349534}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,9 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxEnemyHealth: 50
-  _lootDrop:
-  - {fileID: 1297384473379106, guid: d1e4802b465dfe145b6a6fcd253f2c5d, type: 2}
-  - {fileID: 1758811525670216, guid: 5bb89e7b3b470ca4e877a33d0865a6d1, type: 2}
+  _lootDrop: {fileID: 1297384473379106, guid: d1e4802b465dfe145b6a6fcd253f2c5d, type: 2}
 --- !u!114 &114147467141652026
 MonoBehaviour:
   m_ObjectHideFlags: 1

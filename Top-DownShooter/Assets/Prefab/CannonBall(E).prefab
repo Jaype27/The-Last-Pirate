@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4430266576745372}
   - component: {fileID: 212535317178408982}
   - component: {fileID: 58638200355589138}
-  - component: {fileID: 114429190759141744}
   - component: {fileID: 50138125933966300}
-  m_Layer: 0
+  - component: {fileID: 114659158518138956}
+  m_Layer: 12
   m_Name: CannonBall(E)
   m_TagString: e_cannonball
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1438341116174966}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.050000012
---- !u!114 &114429190759141744
+--- !u!114 &114659158518138956
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,10 +86,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1438341116174966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b88c71e31cd80c49803af3ab4fb7822, type: 3}
+  m_Script: {fileID: 11500000, guid: a7ea82a38f5d70941a60cd9a72213e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 15
   _activeSpanLife: 0.5
   _damageGiven: 10
 --- !u!212 &212535317178408982

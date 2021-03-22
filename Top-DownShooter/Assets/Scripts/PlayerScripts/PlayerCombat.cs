@@ -11,17 +11,17 @@ public class PlayerCombat : MonoBehaviour {
 	private RightCannon _RCannon;
 	private ForwardCannon _FCannon;
 	private BackCannon _BCannon;
-	private GrapeShot _grapeShot;
-	public float _maxAbilityDuration;
-	private float _abilityDuration;
-	public Image _durationBar;
-	private bool _isGrapeShot = false;
+	// private GrapeShot _grapeShot;
+	// public float _maxAbilityDuration;
+	// private float _abilityDuration;
+	// public Image _durationBar;
+	// private bool _isGrapeShot = false;
 
 
 	// Use this for initialization
 	void Start () {
-		_abilityDuration = _maxAbilityDuration;
-		_grapeShot = GetComponent<GrapeShot>();
+		// _abilityDuration = _maxAbilityDuration;
+		// _grapeShot = GetComponent<GrapeShot>();
 		_RCannon = GetComponent<RightCannon>();
 		_FCannon = GetComponent<ForwardCannon>();
 		_BCannon = GetComponent<BackCannon>();
@@ -31,10 +31,10 @@ public class PlayerCombat : MonoBehaviour {
 	void Update () {
 		GoldCount();
 		AbilityUnlocked();
-		DurationBar();
+		/* DurationBar();
 		if (_isGrapeShot == true) {
 			GrapeShotAbility();
-		}
+		} */
 	}
 
 	public void GoldTaken(int _amnt) {
@@ -46,15 +46,15 @@ public class PlayerCombat : MonoBehaviour {
 	}
 
 	void AbilityUnlocked() {
-		if(_goldPoints == 10) {
+		if(_goldPoints >= 10) {
 			_RCannon.enabled = true;
 		}
 
-		if(_goldPoints == 20) {
+		if(_goldPoints >= 20) {
 			_FCannon.enabled = true;
 		}
 
-		if(_goldPoints == 30) {
+		if(_goldPoints >= 30) {
 			_BCannon.enabled = true;
 		}
 	}
@@ -65,15 +65,15 @@ public class PlayerCombat : MonoBehaviour {
 			_soundEffect[3].Play();
 		}
 
-		if(other.gameObject.tag == "GrapeShot") {
+		/* if(other.gameObject.tag == "GrapeShot") {
 			_soundEffect[4].Play();
 			_abilityDuration = _maxAbilityDuration;
 			other.gameObject.SetActive(false);
 			_isGrapeShot = true;
-		}
+		} */
 	}
 
-	void GrapeShotAbility() {
+	/* void GrapeShotAbility() {
 		if(_abilityDuration > 0) {
 			_abilityDuration -= Time.deltaTime;
 			_grapeShot.enabled = true;
@@ -88,5 +88,5 @@ public class PlayerCombat : MonoBehaviour {
 	
 	void DurationBar() {
 		_durationBar.fillAmount = _abilityDuration / _maxAbilityDuration;
-	}
+	} */
 }

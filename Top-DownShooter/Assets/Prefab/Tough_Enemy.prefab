@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4811425265498578}
   - component: {fileID: 212894484077952356}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cannon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4092069085777364}
   - component: {fileID: 212980824790326736}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cannon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4921547426496932}
   - component: {fileID: 212511220590232212}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4679347736130950}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cannons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4386483762050566}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4835074970637688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 114912987851898410}
   - component: {fileID: 114660649586887822}
   - component: {fileID: 114737466689420528}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tough_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4857593466681178}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,9 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxEnemyHealth: 100
-  _lootDrop:
-  - {fileID: 1207243194912780, guid: 9d434fb13eee88b42a4da47f049cee00, type: 2}
-  - {fileID: 1758811525670216, guid: 5bb89e7b3b470ca4e877a33d0865a6d1, type: 2}
+  _lootDrop: {fileID: 1207243194912780, guid: 9d434fb13eee88b42a4da47f049cee00, type: 2}
 --- !u!114 &114660649586887822
 MonoBehaviour:
   m_ObjectHideFlags: 1

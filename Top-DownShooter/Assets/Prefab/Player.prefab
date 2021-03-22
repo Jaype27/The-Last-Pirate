@@ -213,7 +213,6 @@ GameObject:
   - component: {fileID: 114173406908420004}
   - component: {fileID: 114356482708005254}
   - component: {fileID: 114613329829778342}
-  - component: {fileID: 114099382400447406}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -525,31 +524,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.4, y: 1}
   m_Direction: 0
---- !u!114 &114099382400447406
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1768122111370878}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f15bdb46f000442977fe9ccaa47d76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _firePoint:
-  - {fileID: 4005794096344478}
-  - {fileID: 4281603799186996}
-  - {fileID: 4130896299703944}
-  - {fileID: 4456992001558744}
-  - {fileID: 4514828792665624}
-  - {fileID: 4838981697169932}
-  _cannonBallPrefab: {fileID: 1724454449060822, guid: e6d74b4362826b348a8c6a721d3ccb28,
-    type: 2}
-  _fireRate: 0.1
-  _soundEffect:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &114173406908420004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -583,8 +557,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _maxAbilityDuration: 5
-  _durationBar: {fileID: 0}
 --- !u!114 &114356482708005254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -645,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17036597426b1845b9a12c499c34e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxPlayerHealth: 999
+  _maxPlayerHealth: 100
   _healthBar: {fileID: 0}
   _playerRend: {fileID: 212148107727333464}
   _flashMax: 0.1

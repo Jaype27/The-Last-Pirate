@@ -38,7 +38,7 @@ public class WaveManager : MonoBehaviour {
 			return;
 		}
 
-		if(_waveIndex == _waves.Length || GameManager._playerLives <= 0) {
+		if(_waveIndex >= _waves.Length) {
 			_gm._gameOver = true;
 			_gm.GameOver();
 			this.enabled = false;
@@ -54,7 +54,7 @@ public class WaveManager : MonoBehaviour {
 		_waveCountDown -= Time.deltaTime;
 		_waveCountDown = Mathf.Clamp(_waveCountDown, 0f, Mathf.Infinity);
 		_countdownText.text = string.Format("{0:00.00}", _waveCountDown);
-
+		
 	}
 
 	IEnumerator SpawnWave () {
@@ -62,7 +62,7 @@ public class WaveManager : MonoBehaviour {
 		Wave _wave = _waves[_waveIndex];	
 
 		_waveNumber++;
-		_waveText.text = "Wave: " + _waveNumber;
+		_waveText.text = "Wave: " + _waveNumber + "/5";
 
 		for(int i = 0; i < _wave._enemyCount; i++) {
 			SpawnEnemy(_wave._enemyType[Random.Range(0, _wave._enemyType.Length)]);
@@ -77,6 +77,6 @@ public class WaveManager : MonoBehaviour {
 		Instantiate(_enemy, _spawnPoint[Random.Range(0, _spawnPoint.Length)].position, _spawnPoint[Random.Range(0, _spawnPoint.Length)].rotation);
 		_enemyRemain++;
 		_noeText.text = "NOE: " + _enemyRemain;
-		
+		Debug.Log(_enemyRemain);
 	}
 }

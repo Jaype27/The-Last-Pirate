@@ -41,7 +41,7 @@ public class EnemyHealth : MonoBehaviour {
 
 	void SpawnDrop() {
 
-		Instantiate(_lootDrop, transform.position, transform.rotation);
+		Instantiate(_lootDrop, transform.position, Quaternion.identity);
 
 		// float rand = Random.Range(0f, 100f);
 

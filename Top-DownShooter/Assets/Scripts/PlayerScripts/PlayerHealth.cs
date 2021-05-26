@@ -25,6 +25,10 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
 		InvincibleFrames();
 		HealthBar();
+
+		if(Input.GetKeyDown(KeyCode.Space)) {
+			_playerHealth -= 10;
+		}
 	}
 
 	void InvincibleFrames() {
@@ -72,6 +76,7 @@ public class PlayerHealth : MonoBehaviour {
 
 			if(_playerHealth <= 0) {
 				this.gameObject.SetActive(false);
+				_healthBar.gameObject.SetActive(false);
 				_gm.SpawnPlayer();
 			}
 		}
@@ -79,5 +84,6 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void FullHealth() {
 		_playerHealth = _maxPlayerHealth;
+		_healthBar.gameObject.SetActive(true);
 	}
 }

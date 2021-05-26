@@ -62,7 +62,7 @@ public class WaveManager : MonoBehaviour {
 		Wave _wave = _waves[_waveIndex];	
 
 		_waveNumber++;
-		_waveText.text = "Wave: " + _waveNumber + "/5";
+		_waveText.text = "Wave: " + _waveNumber + " of 5";
 
 		for(int i = 0; i < _wave._enemyCount; i++) {
 			SpawnEnemy(_wave._enemyType[Random.Range(0, _wave._enemyType.Length)]);
@@ -77,6 +77,5 @@ public class WaveManager : MonoBehaviour {
 		Instantiate(_enemy, _spawnPoint[Random.Range(0, _spawnPoint.Length)].position, _spawnPoint[Random.Range(0, _spawnPoint.Length)].rotation);
 		_enemyRemain++;
 		_noeText.text = "NOE: " + _enemyRemain;
-		Debug.Log(_enemyRemain);
 	}
 }

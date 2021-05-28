@@ -97,6 +97,7 @@ e90403eeda069970e0b9de1533de13a6 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 2d58ca16854b99daea8c45e9c0f367b7 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 16da51d1b62ef6d4ee1849350434023b UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 0300b2708aa7d8638a9715d76dcf863a Cinemachine.dll:Cinemachine.CinemachineExternalCamera
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MusicPlayer
 3119ca65a0fd21459b807b4b54f78bc4 Cinemachine.dll:Cinemachine.CinemachineStoryboard
 54e58150da974e26e5cc79d83cf09444 Assembly-CSharp.dll:.RemovePanel
 db06fb7a4a1fe2b02c84a0952255d502 Cinemachine.dll:.CinemachineCameraOffset
@@ -264,4 +265,3 @@ b77ba20ff159d2da00a68503807ef22f AstarPathfindingProject.dll:Pathfinding.Animati
 0076ec15dda030330bfcebd65a836408 Cinemachine.dll:Cinemachine.CinemachineBasicMultiChannelPerlin
 5f6f9b1bdbfe6ed5ee40451bad77f5ea Cinemachine.dll:Cinemachine.CinemachineClearShot
 df16fd80ab27bb507aeb34e99a0feb3c Assembly-CSharp.dll:.BackCannon
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MusicPlayer

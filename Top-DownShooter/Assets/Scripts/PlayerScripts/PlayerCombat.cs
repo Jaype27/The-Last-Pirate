@@ -65,6 +65,10 @@ public class PlayerCombat : MonoBehaviour {
 			_soundEffect[3].Play();
 		}
 
+		if(other.gameObject.tag == "Health") {
+			_soundEffect[3].Play();
+		}
+
 		/* if(other.gameObject.tag == "GrapeShot") {
 			_soundEffect[4].Play();
 			_abilityDuration = _maxAbilityDuration;

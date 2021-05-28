@@ -12,6 +12,7 @@ TagManager:
   - GrapeShot
   - windbox
   - t_cannonball
+  - Health
   layers:
   - Default
   - TransparentFX

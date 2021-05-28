@@ -17,7 +17,7 @@ public class WindSpawn : MonoBehaviour {
 	private float _yAxis;
 	private Vector2 _randomSpawn;
 	private float _nextSpawnTimer;
-	public float _maxSpawnTimer = 5.0f;
+	private float _maxSpawnTimer;
 	PoolManager _poolMG;
 
 	// Use this for initialization
@@ -33,7 +33,7 @@ public class WindSpawn : MonoBehaviour {
 
 		if(_nextSpawnTimer <= 0) { // Causes delay upon playing / Not a problem but something to look into
 			SpawnWindLocation();
-			_nextSpawnTimer = _maxSpawnTimer;
+			_nextSpawnTimer = Random.Range(6, 10);
 			
 		}
 	}

@@ -86,4 +86,12 @@ public class PlayerHealth : MonoBehaviour {
 		_playerHealth = _maxPlayerHealth;
 		_healthBar.gameObject.SetActive(true);
 	}
+
+	public void RestoreHealth(int amount) {
+		_playerHealth += amount;
+
+		if(_playerHealth > _maxPlayerHealth) {
+			_playerHealth = _maxPlayerHealth;
+		}
+	}
 }

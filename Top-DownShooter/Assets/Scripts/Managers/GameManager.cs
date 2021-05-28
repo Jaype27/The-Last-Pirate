@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-	public static int _playerLives = 1;
+	public static int _playerLives;
 	public bool _gameOver;
 	public GameObject _gameOverScreen;
 	public Text _livesNumberText;
@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_gameOver = false;
-		_playerLives = 1;
+		_playerLives = 3;
 	}
 	
 	// Update is called once per frame
